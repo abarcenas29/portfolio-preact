@@ -1,0 +1,7 @@
+{
+  "port" : 3500,
+  "notify": false,
+  "server": {
+    "baseDir" : "./build"
+  }
+}
