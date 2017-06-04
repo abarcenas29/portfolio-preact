@@ -1,0 +1,14 @@
+/*******************************
+        Global Overrides
+*******************************/
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body, #app {
+  height: inherit;
+  width:  inherit;
+  background-color: #F7F7F7;
+}
