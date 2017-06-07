@@ -6,11 +6,18 @@ import { Link } from 'react-router-dom'
 
 import { defaultAction } from './actions'
 
-import { Grid, Menu, Header } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
+import MainNav from './../../components/MainNav'
 
-const Container = css(Grid)`
+const Base = css(Grid)`
   height: inherit;
   flex-direction: column !important;
+  position: relative;
+`
+
+const FixedHeader = css(Grid.Column)`
+  position: absolute;
+  top: 0;
 `
 
 const Content = css(Grid.Column)`
@@ -30,31 +37,10 @@ class App extends Component {
 
   render () {
     return (
-      <Container relaxed>
-        <Grid.Column width={16}>
-          <Menu stackable>
-            <Menu.Item>
-              <Header as='h1'>Preact Boilerplate</Header>
-            </Menu.Item>
-            <Menu.Menu position='right'>
-              <Menu.Item
-                link
-                onClick={() => this.redirect('/')}>
-                Home
-              </Menu.Item>
-              <Menu.Item
-                link
-                onClick={() => this.redirect('/about')}>
-                About
-              </Menu.Item>
-              <Menu.Item
-                link
-                onClick={() => this.redirect('/contact')}>
-                Contact
-              </Menu.Item>
-            </Menu.Menu>
-          </Menu>
-        </Grid.Column>
+      <Base relaxed>
+        <FixedHeader width={16}>
+          <MainNav />
+        </FixedHeader>
         <Content width={16}>
           {this.props.children}
         </Content>
@@ -62,7 +48,7 @@ class App extends Component {
           <Link to='/about'>About</Link>
           This is the footer
         </Grid.Column>
-      </Container>
+      </Base>
     )
   }
 }

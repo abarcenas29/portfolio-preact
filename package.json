@@ -84,6 +84,7 @@
     "less-plugin-autoprefix": "1.5.1",
     "less-plugin-clean-css": "1.5.1",
     "lint-staged": "3.4.2",
+    "module-alias": "2.0.0",
     "offline-plugin": "4.8.1",
     "plop": "1.7.4",
     "postcss-loader": "2.0.5",
