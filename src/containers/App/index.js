@@ -13,11 +13,16 @@ const Base = css(Grid)`
   height: inherit;
   flex-direction: column !important;
   position: relative;
+  padding: 0;
 `
 
 const FixedHeader = css(Grid.Column)`
-  position: absolute;
+  position: fixed !important;
   top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 1000;
 `
 
 const Content = css(Grid.Column)`
@@ -37,7 +42,7 @@ class App extends Component {
 
   render () {
     return (
-      <Base relaxed>
+      <Base>
         <FixedHeader width={16}>
           <MainNav />
         </FixedHeader>
