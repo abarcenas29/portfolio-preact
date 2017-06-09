@@ -4,6 +4,10 @@ import _ from 'lodash'
 import css from 'styled-components'
 
 import SplashPage from './sections/SplashPage'
+import SmallBlurb from './sections/SmallBlurb'
+import AboutBlurb from './sections/AboutBlurb'
+import MainPortfolios from './sections/MainPortfolios'
+import Contacts from './sections/Contacts'
 
 const HomeContainer = css(Grid.Column)`
   height: ${prop => prop.height}px;
@@ -63,10 +67,22 @@ export default class Home extends Component {
   render () {
     const { browserHeight } = this.state
     return (
-      <Grid>
+      <Grid columns={1} stackable>
         <HomeContainer width={16} height={browserHeight}>
           <SplashPage height={browserHeight} />
         </HomeContainer>
+        <Grid.Column>
+          <SmallBlurb />
+        </Grid.Column>
+        <Grid.Column>
+          <AboutBlurb />
+        </Grid.Column>
+        <Grid.Column>
+          <MainPortfolios />
+        </Grid.Column>
+        <Grid.Column>
+          <Contacts />
+        </Grid.Column>
       </Grid>
     )
   }

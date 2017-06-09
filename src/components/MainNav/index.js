@@ -39,6 +39,10 @@ const MenuParent = css.ul`
     list-style-type: none;
     display: inline-block;
     padding: 0 1em;
+
+    @media only screen and (max-width: 767px) and (min-width: 320px) {
+      display: none;
+    }
   }
 `
 
@@ -46,7 +50,10 @@ class MainNav extends Component {
   render () {
     return (
       <Grid columns={1} centered>
-        <Grid.Column computer={13}>
+        <Grid.Column
+          computer={13}
+          mobile={16}
+          style={{ padding: 0 }}>
           <Header>
             <BrandContainer>
               Brand

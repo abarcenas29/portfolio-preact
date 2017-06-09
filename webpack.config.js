@@ -108,8 +108,8 @@ webpack.resolve = {
   alias: {
     'react': 'preact-compat',
     'react-dom': 'preact-compat',
-    'container': path.resolve(__dirname, 'src', 'container'),
-    'component': path.resolve(__dirname, 'src', 'component')
+    'containers': path.resolve(__dirname, 'src', 'containers'),
+    'components': path.resolve(__dirname, 'src', 'components')
   }
 }
 

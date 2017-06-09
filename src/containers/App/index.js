@@ -2,16 +2,15 @@ import React, { Component } from 'react'
 import css from 'styled-components'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
-import { Link } from 'react-router-dom'
 
 import { defaultAction } from './actions'
 
 import { Grid } from 'semantic-ui-react'
-import MainNav from './../../components/MainNav'
+import MainNav from 'components/MainNav'
+import MainFooter from 'components/MainFooter'
 
 const Base = css(Grid)`
   height: inherit;
-  flex-direction: column !important;
   position: relative;
   padding: 0;
 `
@@ -42,7 +41,7 @@ class App extends Component {
 
   render () {
     return (
-      <Base>
+      <Base columns={1}>
         <FixedHeader width={16}>
           <MainNav />
         </FixedHeader>
@@ -50,8 +49,7 @@ class App extends Component {
           {this.props.children}
         </Content>
         <Grid.Column width={16}>
-          <Link to='/about'>About</Link>
-          This is the footer
+          <MainFooter />
         </Grid.Column>
       </Base>
     )
