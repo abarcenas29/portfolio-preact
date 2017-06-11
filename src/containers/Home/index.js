@@ -1,20 +1,24 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
+import { connect } from 'react-redux'
 import _ from 'lodash'
 import css from 'styled-components'
 
 import SplashPage from './sections/SplashPage'
-import SmallBlurb from './sections/SmallBlurb'
 import AboutBlurb from './sections/AboutBlurb'
 import MainPortfolios from './sections/MainPortfolios'
 import Contacts from './sections/Contacts'
+
+import Waypoint from 'react-waypoint'
+
+import { dimNavMenuAction } from 'containers/App/actions'
 
 const HomeContainer = css(Grid.Column)`
   height: ${prop => prop.height}px;
   background-color: blue;
 `
 
-export default class Home extends Component {
+class Home extends Component {
   constructor (props, context) {
     super(props, context)
 
@@ -24,6 +28,9 @@ export default class Home extends Component {
 
     this.computeHeight = this.computeHeight.bind(this)
     this.resizeHandle = this.resizeHandle.bind(this)
+
+    this.waypointOnEnter = this.waypointOnEnter.bind(this)
+    this.waypointOnLeave = this.waypointOnLeave.bind(this)
   }
 
   computeHeight () {
@@ -57,6 +64,14 @@ export default class Home extends Component {
     )
   }
 
+  waypointOnEnter () {
+    this.props.dimNavMenu(false)
+  }
+
+  waypointOnLeave () {
+    this.props.dimNavMenu(true)
+  }
+
   componentWillUnmount () {
     window.removeEventListener(
       'resize',
@@ -67,17 +82,20 @@ export default class Home extends Component {
   render () {
     const { browserHeight } = this.state
     return (
-      <Grid columns={1} stackable>
+      <Grid columns={1} stackable centered>
         <HomeContainer width={16} height={browserHeight}>
-          <SplashPage height={browserHeight} />
+          <Waypoint
+            onEnter={this.waypointOnEnter}
+            onLeave={this.waypointOnLeave}>
+            <div>
+              <SplashPage height={browserHeight} />
+            </div>
+          </Waypoint>
         </HomeContainer>
-        <Grid.Column>
-          <SmallBlurb />
-        </Grid.Column>
         <Grid.Column>
           <AboutBlurb />
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column computer={13} mobile={16}>
           <MainPortfolios />
         </Grid.Column>
         <Grid.Column>
@@ -87,3 +105,19 @@ export default class Home extends Component {
     )
   }
 }
+
+const mapStateToProps = store => {
+  return {}
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    dimNavMenu: payload =>
+      dispatch(dimNavMenuAction(payload)),
+    dispatch
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  Home
+)

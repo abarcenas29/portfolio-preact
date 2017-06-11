@@ -20,8 +20,12 @@ const FixedHeader = css(Grid.Column)`
   top: 0;
   left: 0;
   margin: 0;
+  padding-bottom: 1.5em !important;
   width: 100%;
   z-index: 1000;
+  background-color: rgba(0,0,0, ${prop => (prop.dim ? '0.5' : '0')});
+
+  transition: background-color 500ms;
 `
 
 const Content = css(Grid.Column)`
@@ -31,18 +35,12 @@ const Content = css(Grid.Column)`
 class App extends Component {
   componentWillMount () {
     this.props.default({ text: 'I am launched' })
-
-    this.redirect = this.redirect.bind(this)
-  }
-
-  redirect (url) {
-    this.props.redirect(url)
   }
 
   render () {
     return (
       <Base columns={1}>
-        <FixedHeader width={16}>
+        <FixedHeader width={16} dim={this.props.dimNavMenu}>
           <MainNav />
         </FixedHeader>
         <Content width={16}>
@@ -57,7 +55,10 @@ class App extends Component {
 }
 
 const mapStateToProps = store => {
-  return {}
+  const { App } = store
+  return {
+    dimNavMenu: App.get('dimNavMenu')
+  }
 }
 
 function mapDispatchToProps (dispatch) {

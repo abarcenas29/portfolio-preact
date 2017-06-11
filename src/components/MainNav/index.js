@@ -4,16 +4,19 @@
 *
 */
 import React, { Component } from 'react'
+import { Link } from 'react-scroll'
 import css from 'styled-components'
-import { Grid } from 'semantic-ui-react'
+
+import { Grid, Image } from 'semantic-ui-react'
 
 const Header = css.header`
-  background-color: pink;
+  color: #FFF;
   display: flex;
-  height: 4em;
-  width: 100%;
-  justify-content: space-between;
   flex-wrap: wrap;
+  height: 4em;
+  justify-content: space-between;
+  margin-top: 1em;
+  width: 100%;
 `
 
 const BrandContainer = css.div`
@@ -43,27 +46,58 @@ const MenuParent = css.ul`
     @media only screen and (max-width: 767px) and (min-width: 320px) {
       display: none;
     }
+
+    > a {
+      cursor: pointer;
+    }
   }
 `
+
+const ScrollLink = ({ to, children, ...props }) => {
+  return (
+    <Link to={to} smooth duration={500} {...props}>
+      {children}
+    </Link>
+  )
+}
 
 class MainNav extends Component {
   render () {
     return (
       <Grid columns={1} centered>
         <Grid.Column
+          widescreen={10}
           computer={13}
           mobile={16}
           style={{ padding: 0 }}>
           <Header>
             <BrandContainer>
-              Brand
+              <Image size='small'>
+                <img src='/assets/images/mlogo.svg' />
+              </Image>
             </BrandContainer>
             <MenuContainer>
-              <MenuParent>
-                <li>Home</li>
-                <li>About</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
+              <MenuParent className='nav-menu'>
+                <li>
+                  <ScrollLink to='splash-page'>
+                    Home
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink to='about-blurb' offset={-75}>
+                    About
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink to='main-portfolio'>
+                    Portfolio
+                  </ScrollLink>
+                </li>
+                <li>
+                  <ScrollLink to='contacts'>
+                    Contact
+                  </ScrollLink>
+                </li>
               </MenuParent>
             </MenuContainer>
           </Header>

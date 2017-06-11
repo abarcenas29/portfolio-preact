@@ -7,7 +7,7 @@
 --------------------*/
 
 @textTransform: none;
-@fontFamily: @headerFont;
+@fontFamily: @headerFonts;
 @fontWeight: @headerFontWeight;
 @lineHeight: @headerLineHeight;
 @lineHeightOffset: @headerLineHeightOffset;

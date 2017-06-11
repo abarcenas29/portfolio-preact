@@ -1,38 +1,78 @@
 import React from 'react'
 import css from 'styled-components'
+import { Element } from 'react-scroll'
 import {
   Button,
   Grid,
   Header,
-  Icon
+  Icon,
+  Image
 } from 'semantic-ui-react'
 
 const HomeContainer = css(Grid)`
   height: ${prop => prop.height}px;
-  background-color: blue;
+  
+  background-image: url('/assets/images/splash.cover.web.jpg');
+  background-size: cover;
+
+  position: relative;
+`
+
+const HeaderTitle = css(Header)`
+  margin-top: 0 !important;
+`
+
+const Filter = css.div`
+  background-color: rgba(0,0,0, 0.5);
+  height: inherit;
+  position: absolute;
+  width: 100%;
+`
+
+const SubHeader = css(Header.Subheader)`
+  margin-top: 0.5em !important;
+`
+
+const ImgReactWordmark = css.img`
+  height: 1.5em !important;
+  width: inherit !important;
+  margin: 0 0.25em;
+  margin-bottom: 0.25em;
 `
 
 export default ({ height }) => {
   return (
-    <HomeContainer centered height={height}>
-      <Grid.Column
-        computer={13}
-        textAlign='center'
-        verticalAlign='middle'>
-        <Header as='h1'>
-          This is the header
-          <Header.Subheader>
-            <a><Icon name='github' size='large' /></a>
-            <a><Icon name='twitter' size='large' /></a>
-            <a><Icon name='linkedin' size='large' /></a>
-          </Header.Subheader>
-          <Header.Subheader>
-            <Button color='orange'>
-              Portfolio
-            </Button>
-          </Header.Subheader>
-        </Header>
-      </Grid.Column>
-    </HomeContainer>
+    <Element name='splash-page'>
+      <HomeContainer centered height={height}>
+        <Filter />
+        <Grid.Column
+          widescreen={10}
+          computer={13}
+          textAlign='center'
+          verticalAlign='middle'>
+          <div>
+            <Image size='medium'>
+              <img src='/assets/images/mlogo.svg' />
+            </Image>
+            <HeaderTitle as='h1' inverted>
+              I write and design
+              {' '}
+              <ImgReactWordmark src='/assets/images/react-wordmark.png' />
+              {' '}
+              Apps
+              <SubHeader>
+                <Button color='grey'>
+                  <Icon name='github' />
+                  GitHub
+                </Button>
+                <Button inverted basic>
+                  Portfolio
+                </Button>
+              </SubHeader>
+            </HeaderTitle>
+          </div>
+        </Grid.Column>
+      </HomeContainer>
+    </Element>
   )
 }
