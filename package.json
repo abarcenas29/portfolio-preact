@@ -70,6 +70,7 @@
     "bundle-loader": "0.5.5",
     "clean-dir": "1.0.3",
     "compression-webpack-plugin": "0.4.0",
+    "copy-webpack-plugin": "4.0.1",
     "cross-env": "5.0.0",
     "css-loader": "0.28.1",
     "env-cmd": "5.1.0",
