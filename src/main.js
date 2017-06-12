@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import * as OfflinePluginRuntime
   from 'offline-plugin/runtime'
-import App from './App'
+import App from './app'
 
 // semantic less
 import './semantic/semantic.less'
@@ -24,5 +24,5 @@ if (process.env.NODE_ENV === 'production') {
 
 if (module.hot) {
   module.hot.accept()
-  module.hot.accept('./App', () => init())
+  module.hot.accept('./app', () => init())
 }
