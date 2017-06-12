@@ -8,7 +8,7 @@
     "npm": "4.2.0"
   },
   "scripts": {
-    "build": "yarn run clean:build && cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "yarn run clean:build && cross-env NODE_ENV=production webpack --config webpack.config.js --progress --color --hide-modules",
     "clean:build": "cleandir build",
     "eject": "rimraf .git",
     "formatter": "prettier --print-width 60 --no-semi --single-quote --jsx-bracket-same-line  --write \"src/**/*.js\"",
