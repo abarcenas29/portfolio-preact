@@ -14,25 +14,28 @@ const AboutBlurb = css(Grid)`
 
 const ColorColumn = css(Grid.Column)`
   background-color: ${props => props.color};
+
+  margin-top: 0 !important;
+  padding-top: 1em !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 1em !important;
 `
 
 const ParagraphContainer = css.div`
-  margin: 0 2em;
+  padding: 0 2em;
+  display: block;
 `
 const SmallBlurb = css(Grid.Column)`
   min-height: 10em;
   display: flex !important;
   align-items: center;
   justify-content: center;
+  padding-right: 0 !important;
   
   > h2 {
     text-align: center;
   }
 `
-
-/*
-
-*/
 
 const ContentBlurb = ({
   floated,
@@ -43,17 +46,12 @@ const ContentBlurb = ({
   return (
     <Grid centered>
       <Grid.Column
-        floated={floated}
         computer={16}
         widescreen={8}
         textAlign='center'>
         <ParagraphContainer>
           <Header as='h1' inverted>{title}</Header>
-          <Icon
-            name='user outline'
-            size='massive'
-            inverted
-          />
+          <Icon name={icon} size='massive' inverted />
           <br />
           <br />
           <p>{children}</p>
@@ -71,7 +69,10 @@ export default () => {
     <Element name='about-blurb'>
       <AboutBlurb centered>
         <Grid.Row>
-          <SmallBlurb widescreen={10} computer={13}>
+          <SmallBlurb
+            widescreen={10}
+            computer={13}
+            textAlign='center'>
             <Header as='h2' color='grey'>
               What better way to show you my skills is by writing this neat looking website.
             </Header>

@@ -16,6 +16,7 @@ const Base = css(Grid)`
 `
 
 const FixedHeader = css(Grid.Column)`
+  display: block;
   position: fixed !important;
   top: 0;
   left: 0;
@@ -40,7 +41,10 @@ class App extends Component {
   render () {
     return (
       <Base columns={1}>
-        <FixedHeader width={16} dim={this.props.dimNavMenu}>
+        <FixedHeader
+          width={16}
+          dim={this.props.dimNavMenu}
+          style={{ top: '0em' }}>
           <MainNav />
         </FixedHeader>
         <Content width={16}>

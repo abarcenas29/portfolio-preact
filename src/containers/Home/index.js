@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+import { Helmet } from 'react-helmet'
 import _ from 'lodash'
 import css from 'styled-components'
 
@@ -83,6 +84,7 @@ class Home extends Component {
     const { browserHeight } = this.state
     return (
       <Grid columns={1} stackable centered>
+        <Helmet title='MeganeMe - Portfolio Site for Aldrich Allen Barcenas' />
         <HomeContainer width={16} height={browserHeight}>
           <Waypoint
             onEnter={this.waypointOnEnter}

@@ -7,7 +7,13 @@ import React, { Component } from 'react'
 import { Link } from 'react-scroll'
 import css from 'styled-components'
 
-import { Grid, Image } from 'semantic-ui-react'
+import {
+  Button,
+  Grid,
+  Image,
+  Modal,
+  Menu
+} from 'semantic-ui-react'
 
 const Header = css.header`
   color: #FFF;
@@ -23,6 +29,10 @@ const BrandContainer = css.div`
   display: flex;
   align-items: center;
   height: inherit;
+
+  @media only screen and (max-width: 767px) and (min-width: 320px) {
+    margin-left: 0.5em;
+  }
 `
 
 const MenuContainer = css.div`
@@ -43,14 +53,27 @@ const MenuParent = css.ul`
     display: inline-block;
     padding: 0 1em;
 
+    > a {
+        cursor: pointer;
+    }
+  }
+
+  > li.desktop {
     @media only screen and (max-width: 767px) and (min-width: 320px) {
       display: none;
     }
+  }
 
-    > a {
-      cursor: pointer;
+  > li.mobile {
+    display: none;
+    @media only screen and (max-width: 767px) and (min-width: 320px) {
+      display: inherit;
     }
   }
+`
+const ModalContent = css(Modal.Content)`
+  display: flex !important;
+  justify-content: center;
 `
 
 const ScrollLink = ({ to, children, ...props }) => {
@@ -61,7 +84,52 @@ const ScrollLink = ({ to, children, ...props }) => {
   )
 }
 
+const ModalNavigation = ({ ...props }) => {
+  return (
+    <Modal size='small' {...props} basic>
+      <ModalContent>
+        <Menu vertical>
+          <Menu.Item>
+            <ScrollLink to='splash-page'>
+              Home
+            </ScrollLink>
+          </Menu.Item>
+          <Menu.Item>
+            <ScrollLink to='about-blurb' offset={-80}>
+              About
+            </ScrollLink>
+          </Menu.Item>
+          <Menu.Item>
+            <ScrollLink to='main-portfolio'>
+              Portfolio
+            </ScrollLink>
+          </Menu.Item>
+          <Menu.Item>
+            <ScrollLink to='contacts'>
+              Contacts
+            </ScrollLink>
+          </Menu.Item>
+        </Menu>
+      </ModalContent>
+    </Modal>
+  )
+}
+
 class MainNav extends Component {
+  constructor (props, context) {
+    super(props, context)
+
+    this.state = {
+      mobileNavigationState: false
+    }
+
+    this.handleNavModal = this.handleNavModal.bind(this)
+  }
+
+  handleNavModal (state) {
+    this.setState({ mobileNavigationState: state })
+  }
+
   render () {
     return (
       <Grid columns={1} centered>
@@ -78,25 +146,39 @@ class MainNav extends Component {
             </BrandContainer>
             <MenuContainer>
               <MenuParent className='nav-menu'>
-                <li>
+                <li className='desktop'>
                   <ScrollLink to='splash-page'>
                     Home
                   </ScrollLink>
                 </li>
-                <li>
+                <li className='desktop'>
                   <ScrollLink to='about-blurb' offset={-75}>
                     About
                   </ScrollLink>
                 </li>
-                <li>
+                <li className='desktop'>
                   <ScrollLink to='main-portfolio'>
                     Portfolio
                   </ScrollLink>
                 </li>
-                <li>
+                <li className='desktop'>
                   <ScrollLink to='contacts'>
                     Contact
                   </ScrollLink>
+                </li>
+                <li className='mobile'>
+                  <Button
+                    icon='content'
+                    basic
+                    inverted
+                    onClick={() =>
+                      this.handleNavModal(true)}
+                  />
+                  <ModalNavigation
+                    open={this.state.mobileNavigationState}
+                    onClose={() =>
+                      this.handleNavModal(false)}
+                  />
                 </li>
               </MenuParent>
             </MenuContainer>
