@@ -11,6 +11,6 @@ app.use('/', expressStaticGzip('./build', {
 app.use(express.static('build'))
 app.use(fallback('index.html', { root: 'build' }))
 
-app.listen(3100, () => {
+app.listen(process.env.PORT || 3333, () => {
   console.log(`http://localhost:3100`)
 })
