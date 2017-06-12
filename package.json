@@ -1,6 +1,6 @@
 {
-  "name": "react-router",
-  "version": "1.0.0",
+  "name": "preact-portfolio",
+  "version": "0.8.0",
   "description": "",
   "main": "index.js",
   "engines": {
@@ -18,10 +18,10 @@
     "precommit": "yarn run lint && lint-staged",
     "server": "node server",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --progress --hot",
-    "start:prod": "yarn run postinstall && yarn run build && yarn run server",
+    "start:prod": "npm run postinstall && npm run build && npm run server",
     "webpack:statistic": "webpack --json >  stats.json"
   },
-  "author": "",
+  "author": "Aldrich Allen Barnceas",
   "license": "ISC",
   "lint-staged": {
     "src/**/*.js": [
