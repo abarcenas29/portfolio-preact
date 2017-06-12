@@ -14,11 +14,13 @@
     "formatter": "prettier --print-width 60 --no-semi --single-quote --jsx-bracket-same-line  --write \"src/**/*.js\"",
     "lint": "eslint \"src/**/*.js\" --fix | snazzy",
     "postinstall": "node ./scripts/semantic.fix.js",
+    "heroku-postbuild": "yarn run postinstall && yarn run build",
     "generate": "plop --plopfile ./scripts/generators/index.js",
     "precommit": "yarn run lint && lint-staged",
     "server": "node server",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --progress --hot",
     "start:prod": "yarn run postinstall && yarn run build && yarn run server",
+    "start:production": "yarn run server",
     "webpack:statistic": "webpack --json >  stats.json"
   },
   "author": "Aldrich Allen Barnceas",
