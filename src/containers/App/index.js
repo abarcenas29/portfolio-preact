@@ -12,7 +12,8 @@ import MainFooter from 'components/MainFooter'
 const Base = css(Grid)`
   height: inherit;
   position: relative;
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 `
 
 const FixedHeader = css(Grid.Column)`

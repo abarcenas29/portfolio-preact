@@ -83,7 +83,7 @@ class Home extends Component {
   render () {
     const { browserHeight } = this.state
     return (
-      <Grid columns={1} stackable centered>
+      <Grid columns={1} centered>
         <Helmet title='MeganeMe - Portfolio Site for Aldrich Allen Barcenas' />
         <HomeContainer width={16} height={browserHeight}>
           <Waypoint

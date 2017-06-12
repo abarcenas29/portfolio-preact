@@ -64,49 +64,48 @@ const ContentBlurb = ({
   )
 }
 
+//
+
 export default () => {
   return (
-    <Element name='about-blurb'>
-      <AboutBlurb centered>
-        <Grid.Row>
-          <SmallBlurb
-            widescreen={10}
-            computer={13}
-            textAlign='center'>
+    <AboutBlurb centered>
+      <Grid.Row>
+        <SmallBlurb
+          widescreen={10}
+          computer={13}
+          textAlign='center'>
+          <Element name='about-blurb'>
             <Header as='h2' color='grey'>
               What better way to show you my skills is by writing this neat looking website.
             </Header>
-          </SmallBlurb>
-        </Grid.Row>
-        <Grid.Row>
-          <ColorColumn
-            computer={8}
-            mobile={16}
-            color='violet'>
-            <ContentBlurb
-              title='Who am I'
-              icon='user outline'
-              floated='right'>
-              <p>
-                I'm a full-blooded developer from top to bottom. Ever since my third-grade teacher failed me in my computer programing class. I became obsessed in writing code. Ever since them, writing software has been my passion, and now my life-blood.
-              </p>
-            </ContentBlurb>
-          </ColorColumn>
-          <ColorColumn
-            computer={8}
-            mobile={16}
-            color='green'>
-            <ContentBlurb
-              title='Skillset'
-              icon='student'
-              floated='left'>
-              <p>
-                I'm a full-blooded developer from top to bottom. Ever since my third-grade teacher failed me in my computer programing class. I became obsessed in writing code. Ever since them, writing software has been my passion, and now my life-blood.
-              </p>
-            </ContentBlurb>
-          </ColorColumn>
-        </Grid.Row>
-      </AboutBlurb>
-    </Element>
+          </Element>
+        </SmallBlurb>
+      </Grid.Row>
+      <Grid.Row>
+        <ColorColumn
+          computer={8}
+          mobile={16}
+          color='violet'>
+          <ContentBlurb
+            title='Who am I'
+            icon='user outline'
+            floated='right'>
+            <p>
+              I'm a full-blooded developer from top to bottom. Ever since my third-grade teacher failed me in my computer programing class. I became obsessed in writing code. Ever since them, writing software has been my passion, and now my life-blood.
+            </p>
+          </ContentBlurb>
+        </ColorColumn>
+        <ColorColumn computer={8} mobile={16} color='green'>
+          <ContentBlurb
+            title='Skillset'
+            icon='student'
+            floated='left'>
+            <p>
+              I'm a full-blooded developer from top to bottom. Ever since my third-grade teacher failed me in my computer programing class. I became obsessed in writing code. Ever since them, writing software has been my passion, and now my life-blood.
+            </p>
+          </ContentBlurb>
+        </ColorColumn>
+      </Grid.Row>
+    </AboutBlurb>
   )
 }

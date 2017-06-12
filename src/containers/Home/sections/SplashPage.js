@@ -52,7 +52,7 @@ export default ({ height }) => {
           verticalAlign='middle'>
           <div>
             <Image size='medium'>
-              <img src='/assets/images/mlogo.svg' />
+              <img src='/assets/images/MeganeMe.svg' />
             </Image>
             <HeaderTitle as='h1' inverted>
               I write and design
@@ -61,7 +61,11 @@ export default ({ height }) => {
               {' '}
               Apps
               <SubHeader>
-                <Button color='grey'>
+                <Button
+                  as='a'
+                  href='https://github.com/abarcenas29'
+                  color='grey'
+                  target='_new'>
                   <Icon name='github' />
                   GitHub
                 </Button>

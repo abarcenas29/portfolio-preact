@@ -141,7 +141,7 @@ class MainNav extends Component {
           <Header>
             <BrandContainer>
               <Image size='small'>
-                <img src='/assets/images/mlogo.svg' />
+                <img src='/assets/images/MeganeMe.svg' />
               </Image>
             </BrandContainer>
             <MenuContainer>

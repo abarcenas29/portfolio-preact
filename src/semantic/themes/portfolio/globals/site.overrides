@@ -4,12 +4,11 @@
 
 html {
   height: 100%;
-  width: 100%;
 }
 
 body, #app {
+  width:  100%;
   height: inherit;
-  width:  inherit;
   background-color: #F7F7F7;
   color: #212121;
   font-family: @pageFonts;
