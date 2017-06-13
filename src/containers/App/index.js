@@ -14,6 +14,7 @@ const Base = css(Grid)`
   position: relative;
   padding: 0 !important;
   margin: 0 !important;
+  flex-direction: column !important;
 `
 
 const FixedHeader = css(Grid.Column)`
