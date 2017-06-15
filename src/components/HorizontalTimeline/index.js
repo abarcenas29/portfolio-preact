@@ -75,6 +75,7 @@ const Timeline = css.section`
         > time {
           display: block;
           font-weight: 700;
+          color: #FF5722;
         }
       }
 

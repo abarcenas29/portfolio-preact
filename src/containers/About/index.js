@@ -7,6 +7,7 @@ import HorizontalTimeline
   from 'components/HorizontalTimeline'
 
 import PageSplash from 'components/PageSplash'
+import CompanyBlurb from './sections/CompanyBlurb'
 
 import Waypoint from 'react-waypoint'
 
@@ -96,102 +97,63 @@ class Home extends Component {
             </HistoryContainer>
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column
-            computer={13}
-            widescreen={8}
-            mobile={16}>
-            <Header as='h3'>
-              Manulife Business Processing Services
-              <Header.Subheader>
-                I.T Specialist
-              </Header.Subheader>
-              <Header.Subheader>2009-2011</Header.Subheader>
-            </Header>
-            <p>
-              Tongue shankle spare ribs fatback biltong beef ham hock ground
-              round. Beef ball tip hamburger sausage jowl landjaeger tri-tip
-              rump alcatra cow salami. Pancetta pork belly corned beef pork
-              bresaola, prosciutto short loin ham burgdoggen strip steak salami
-              beef ribs boudin turducken. Ball tip boudin turducken pork
-              andouille burgdoggen jowl jerky ham tongue pig capicola chuck
-              ground round. Pork belly turducken cow brisket tenderloin meatball
-              pork ball tip flank tri-tip burgdoggen frankfurter capicola beef.
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column
-            computer={13}
-            widescreen={8}
-            mobile={16}>
-            <Header as='h3'>
-              Manulife Business Processing Services
-              <Header.Subheader>
-                I.T Specialist
-              </Header.Subheader>
-              <Header.Subheader>2009-2011</Header.Subheader>
-            </Header>
-            <p>
-              Tongue shankle spare ribs fatback biltong beef ham hock ground
-              round. Beef ball tip hamburger sausage jowl landjaeger tri-tip
-              rump alcatra cow salami. Pancetta pork belly corned beef pork
-              bresaola, prosciutto short loin ham burgdoggen strip steak salami
-              beef ribs boudin turducken. Ball tip boudin turducken pork
-              andouille burgdoggen jowl jerky ham tongue pig capicola chuck
-              ground round. Pork belly turducken cow brisket tenderloin meatball
-              pork ball tip flank tri-tip burgdoggen frankfurter capicola beef.
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column
-            computer={13}
-            widescreen={8}
-            mobile={16}>
-            <Header as='h3'>
-              Manulife Business Processing Services
-              <Header.Subheader>
-                I.T Specialist
-              </Header.Subheader>
-              <Header.Subheader>2009-2011</Header.Subheader>
-            </Header>
-            <p>
-              Tongue shankle spare ribs fatback biltong beef ham hock ground
-              round. Beef ball tip hamburger sausage jowl landjaeger tri-tip
-              rump alcatra cow salami. Pancetta pork belly corned beef pork
-              bresaola, prosciutto short loin ham burgdoggen strip steak salami
-              beef ribs boudin turducken. Ball tip boudin turducken pork
-              andouille burgdoggen jowl jerky ham tongue pig capicola chuck
-              ground round. Pork belly turducken cow brisket tenderloin meatball
-              pork ball tip flank tri-tip burgdoggen frankfurter capicola beef.
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row centered>
-          <Grid.Column
-            computer={13}
-            widescreen={8}
-            mobile={16}>
-            <Header as='h3'>
-              Manulife Business Processing Services
-              <Header.Subheader>
-                I.T Specialist
-              </Header.Subheader>
-              <Header.Subheader>2009-2011</Header.Subheader>
-            </Header>
-            <p>
-              Tongue shankle spare ribs fatback biltong beef ham hock ground
-              round. Beef ball tip hamburger sausage jowl landjaeger tri-tip
-              rump alcatra cow salami. Pancetta pork belly corned beef pork
-              bresaola, prosciutto short loin ham burgdoggen strip steak salami
-              beef ribs boudin turducken. Ball tip boudin turducken pork
-              andouille burgdoggen jowl jerky ham tongue pig capicola chuck
-              ground round. Pork belly turducken cow brisket tenderloin meatball
-              pork ball tip flank tri-tip burgdoggen frankfurter capicola beef.
-            </p>
-          </Grid.Column>
-        </Grid.Row>
+        <CompanyBlurb
+          imagePath='/assets/images/manulife-logo.png'
+          company='Manulife Business Processing Services'
+          year='20xx - 20xx'
+          position='IT Specialist'
+          backgroundColor={{
+            image: '#2E7D32',
+            text: '#43A047'
+          }}>
+          <p>
+            Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+          </p>
+        </CompanyBlurb>
+        <CompanyBlurb
+          imagePath='/assets/images/prodigy-logo.png'
+          imgSize='medium'
+          company='Prodigy Group Philippines'
+          year='20xx - 20xx'
+          position='Business Consulting Manager'
+          reversed='computer'
+          backgroundColor={{
+            image: '#616161',
+            text: '#9E9E9E'
+          }}>
+          <p>
+            Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+          </p>
+        </CompanyBlurb>
+        <CompanyBlurb
+          imagePath='/assets/images/bn-logo.png'
+          imgSize='large'
+          company='Beenest Technology Solutions'
+          year='20xx - 20xx'
+          position='Application Developer'
+          backgroundColor={{
+            image: '#EF6C00',
+            text: '#FB8C00'
+          }}>
+          <p>
+            Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+          </p>
+        </CompanyBlurb>
+        <CompanyBlurb
+          imagePath='/assets/images/coapp-logo.png'
+          imgSize='large'
+          company='The Coapperative'
+          year='20xx - 20xx'
+          position='Senior Front-end Web Developer'
+          reversed='computer'
+          backgroundColor={{
+            image: '#512DA8',
+            text: '#673AB7'
+          }}>
+          <p>
+            Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+          </p>
+        </CompanyBlurb>
       </Grid>
     )
   }
