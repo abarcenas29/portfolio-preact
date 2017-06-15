@@ -52,9 +52,11 @@ class App extends Component {
         <Content width={16}>
           {this.props.children}
         </Content>
-        <Grid.Column width={16}>
-          <MainFooter />
-        </Grid.Column>
+        <Grid.Row>
+          <Grid.Column width={16}>
+            <MainFooter />
+          </Grid.Column>
+        </Grid.Row>
       </Base>
     )
   }

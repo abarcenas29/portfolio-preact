@@ -6,9 +6,10 @@
 import React, { Component } from 'react'
 import css from 'styled-components'
 
+import { Icon } from 'semantic-ui-react'
+
 const Timeline = css.section`
   white-space: nowrap;
-  background-color: blue;
 
   > ol {
     font-size: 0;
@@ -57,7 +58,7 @@ const Timeline = css.section`
         padding: 15px;
         font-size: 1rem;
         white-space: normal;
-        color: black;
+        color: #616161;
         background: transparent;
         border: 1px solid #FF5722;
 
@@ -73,6 +74,7 @@ const Timeline = css.section`
 
         > time {
           display: block;
+          font-weight: 700;
         }
       }
 
@@ -108,33 +110,21 @@ const Timeline = css.section`
 
 class HorizontalTimeline extends Component {
   render () {
+    const history = this.props.history
     return (
       <Timeline>
         <ol>
-          <li>
-            <div>
-              <time>2009</time>
-              Graduated at CEU Manila (BS COE)
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>2011</time>
-              Worked at Prodigy Philippines
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>2013</time>
-              Worked at Beenest Technology Solutions
-            </div>
-          </li>
-          <li>
-            <div>
-              <time>2016</time>
-              Worked at Social Offshore
-            </div>
-          </li>
+          {history.map((point, index) => {
+            const { date, icon, text } = point
+            return (
+              <li>
+                <div>
+                  <time>{date}</time>
+                  <Icon name={icon} />{text}
+                </div>
+              </li>
+            )
+          })}
           <li />
         </ol>
       </Timeline>

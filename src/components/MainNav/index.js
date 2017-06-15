@@ -134,7 +134,7 @@ class MainNav extends Component {
     return (
       <Grid columns={1} centered>
         <Grid.Column
-          widescreen={10}
+          widescreen={8}
           computer={13}
           mobile={16}
           style={{ padding: 0 }}>
