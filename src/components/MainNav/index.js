@@ -138,8 +138,9 @@ class MainNav extends Component {
         <Grid.Column
           widescreen={8}
           computer={13}
+          tablet={16}
           mobile={16}
-          style={{ padding: 0 }}>
+          style={{ padding: 0, margin: 0 }}>
           <Header>
             <BrandContainer>
               <Image size='small'>

@@ -34,6 +34,7 @@ const CompanyBlurb = ({
       reversed={reversed}>
       <ColorColumn
         computer={8}
+        tablet={8}
         mobile={16}
         background={image}>
         <NoPaddingGrid
@@ -44,7 +45,7 @@ const CompanyBlurb = ({
           <Grid.Column
             computer={13}
             floated={imgFloated}
-            only='computer'
+            only='computer tablet'
             verticalAlign='middle'>
             <Image
               size={imgSize || 'small'}
@@ -68,6 +69,7 @@ const CompanyBlurb = ({
       </ColorColumn>
       <ColorColumn
         computer={8}
+        tablet={8}
         mobile={16}
         background={text}>
         <NoPaddingGrid

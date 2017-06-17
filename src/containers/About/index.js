@@ -19,6 +19,11 @@ const HistoryContainer = css.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 991px) and (min-width: 768px) {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
 `
 
 const AboutPageContainer = css.div`
@@ -96,17 +101,9 @@ class Home extends Component {
           <Grid.Row centered only='computer tablet'>
             <Grid.Column
               only='computer tablet'
+              tablet={16}
               computer={13}
               widescreen={8}>
-              <HistoryContainer>
-                <HorizontalTimeline
-                  history={this.state.workHistory}
-                />
-              </HistoryContainer>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered only='computer tablet'>
-            <Grid.Column computer={13} widescreen={8}>
               <Header as='h2'>Work History</Header>
               <HistoryContainer>
                 <HorizontalTimeline

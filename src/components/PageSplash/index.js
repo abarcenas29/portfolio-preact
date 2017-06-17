@@ -33,6 +33,7 @@ const PageSplash = () => {
         <Grid.Column
           widescreen={10}
           computer={13}
+          tablet={16}
           textAlign='center'
           verticalAlign='middle'>
           <div>
