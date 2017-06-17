@@ -16,11 +16,6 @@ import { dimNavMenuAction } from 'containers/App/actions'
 
 import { NoPaddingGrid } from 'components/CommonJS'
 
-const HomeContainer = css(Grid.Column)`
-  height: ${prop => prop.height}px;
-  background-color: blue;
-`
-
 class Home extends Component {
   constructor (props, context) {
     super(props, context)
