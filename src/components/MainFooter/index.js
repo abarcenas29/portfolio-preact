@@ -10,6 +10,7 @@ import { Grid, Icon } from 'semantic-ui-react'
 const MainFooter = css(Grid)`
   background-color: #222222;
   color: #9E9E9E;
+  padding: 0 !important;
 
   > div > a {
     font-weight: 700;
@@ -20,29 +21,32 @@ const MainFooter = css(Grid)`
 
 export default () => {
   return (
-    <MainFooter columns={2} centered>
-      <Grid.Column computer={7} widescreen={5}>
-        <Icon name='copyright' color='grey' />
-        {new Date().getFullYear() + ' '}
-        By Aldrich Allen Barcenas
-      </Grid.Column>
-      <Grid.Column
-        computer={7}
-        widescreen={5}
-        textAlign='right'>
-        Theme is inspired by
-        <a
-          href='https://www.famethemes.com/themes/screenr'
-          target='_new'>
-          {' '}Screenr parallax by FameThemes
-        </a>
-        {' '}
-        and by
-        {' '}
-        <a href='https://00saad.com' target='_new'>
-          00-Sadd
-        </a>
-      </Grid.Column>
-    </MainFooter>
+    <div>
+      <MainFooter columns={2} centered padded>
+        <Grid.Column computer={7} widescreen={5}>
+          <Icon name='copyright' color='grey' />
+          {new Date().getFullYear() + ' '}
+          By Aldrich Allen Barcenas
+        </Grid.Column>
+        <Grid.Column
+          relaxed
+          computer={7}
+          widescreen={5}
+          textAlign='right'>
+          Theme is inspired by
+          <a
+            href='https://www.famethemes.com/themes/screenr'
+            target='_new'>
+            {' '}Screenr parallax by FameThemes
+          </a>
+          {' '}
+          and by
+          {' '}
+          <a href='https://00saad.com' target='_new'>
+            00-Sadd
+          </a>
+        </Grid.Column>
+      </MainFooter>
+    </div>
   )
 }

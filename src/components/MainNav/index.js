@@ -15,6 +15,8 @@ import {
   Menu
 } from 'semantic-ui-react'
 
+import { NoPaddingGrid } from 'components/CommonJS'
+
 const Header = css.header`
   color: #FFF;
   display: flex;
@@ -132,7 +134,7 @@ class MainNav extends Component {
 
   render () {
     return (
-      <Grid columns={1} centered>
+      <NoPaddingGrid columns={1} centered>
         <Grid.Column
           widescreen={8}
           computer={13}
@@ -184,7 +186,7 @@ class MainNav extends Component {
             </MenuContainer>
           </Header>
         </Grid.Column>
-      </Grid>
+      </NoPaddingGrid>
     )
   }
 }

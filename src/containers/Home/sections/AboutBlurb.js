@@ -68,7 +68,7 @@ const ContentBlurb = ({
 
 export default () => {
   return (
-    <AboutBlurb centered>
+    <AboutBlurb centered relaxed>
       <Grid.Row>
         <SmallBlurb
           widescreen={10}

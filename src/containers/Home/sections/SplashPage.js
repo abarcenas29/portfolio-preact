@@ -9,7 +9,9 @@ import {
   Image
 } from 'semantic-ui-react'
 
-const HomeContainer = css(Grid)`
+import { NoPaddingGrid } from 'components/CommonJS'
+
+const HomeContainer = css(NoPaddingGrid)`
   height: ${prop => prop.height}px;
   
   background-image: url('/assets/images/splash.cover.web.jpg');
@@ -42,8 +44,8 @@ const ImgReactWordmark = css.img`
 
 export default ({ height }) => {
   return (
-    <Element name='splash-page'>
-      <HomeContainer centered height={height}>
+    <Element name='splash-page' style={{ width: '100%' }}>
+      <HomeContainer centered height={height} relaxed>
         <Filter />
         <Grid.Column
           widescreen={10}

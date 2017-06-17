@@ -13,6 +13,7 @@ const PageContainer = css(Grid)`
   background-image: url('/assets/images/splash.cover.web.jpg')
   position: relative;
   padding-top: 0 !important;
+  margin: 0 !important;
   background-size: cover;
   background-position: center;
 `
@@ -26,18 +27,20 @@ const Filter = css.div`
 
 const PageSplash = () => {
   return (
-    <PageContainer centered>
-      <Filter />
-      <Grid.Column
-        widescreen={10}
-        computer={13}
-        textAlign='center'
-        verticalAlign='middle'>
-        <div>
-          <Header inverted as='h1'>About</Header>
-        </div>
-      </Grid.Column>
-    </PageContainer>
+    <div>
+      <PageContainer centered relaxed>
+        <Filter />
+        <Grid.Column
+          widescreen={10}
+          computer={13}
+          textAlign='center'
+          verticalAlign='middle'>
+          <div>
+            <Header inverted as='h1'>About</Header>
+          </div>
+        </Grid.Column>
+      </PageContainer>
+    </div>
   )
 }
 

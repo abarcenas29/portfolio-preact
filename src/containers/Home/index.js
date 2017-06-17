@@ -14,6 +14,8 @@ import Waypoint from 'react-waypoint'
 
 import { dimNavMenuAction } from 'containers/App/actions'
 
+import { NoPaddingGrid } from 'components/CommonJS'
+
 const HomeContainer = css(Grid.Column)`
   height: ${prop => prop.height}px;
   background-color: blue;
@@ -83,27 +85,27 @@ class Home extends Component {
   render () {
     const { browserHeight } = this.state
     return (
-      <Grid columns={1} centered>
+      <div>
         <Helmet title='MeganeMe - Portfolio Site for Aldrich Allen Barcenas' />
-        <HomeContainer width={16} height={browserHeight}>
-          <Waypoint
-            onEnter={this.waypointOnEnter}
-            onLeave={this.waypointOnLeave}>
-            <div>
-              <SplashPage height={browserHeight} />
-            </div>
-          </Waypoint>
-        </HomeContainer>
-        <Grid.Column>
-          <AboutBlurb />
-        </Grid.Column>
-        <Grid.Column computer={13} mobile={16}>
-          <MainPortfolios />
-        </Grid.Column>
-        <Grid.Column>
-          <Contacts />
-        </Grid.Column>
-      </Grid>
+        <Waypoint
+          onEnter={this.waypointOnEnter}
+          onLeave={this.waypointOnLeave}>
+          <div>
+            <SplashPage height={browserHeight} />
+          </div>
+        </Waypoint>
+        <NoPaddingGrid columns={1} centered relaxed>
+          <Grid.Column>
+            <AboutBlurb />
+          </Grid.Column>
+          <Grid.Column computer={13} mobile={16}>
+            <MainPortfolios />
+          </Grid.Column>
+          <Grid.Column>
+            <Contacts />
+          </Grid.Column>
+        </NoPaddingGrid>
+      </div>
     )
   }
 }

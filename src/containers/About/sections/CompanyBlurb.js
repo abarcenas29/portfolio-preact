@@ -2,6 +2,8 @@ import React from 'react'
 import css from 'styled-components'
 import { Grid, Header, Image } from 'semantic-ui-react'
 
+import { NoPaddingGrid } from 'components/CommonJS'
+
 const ColorColumn = css(Grid.Column)`
   background-color: ${prop => prop.background} !important;
   color: #FFF;
@@ -30,8 +32,11 @@ const CompanyBlurb = ({
     <Grid.Row
       style={{ minHeight: '20em', padding: '0em' }}
       reversed={reversed}>
-      <ColorColumn width={8} background={image}>
-        <Grid
+      <ColorColumn
+        computer={8}
+        mobile={16}
+        background={image}>
+        <NoPaddingGrid
           columns={1}
           padded
           verticalAlign='middle'
@@ -39,6 +44,7 @@ const CompanyBlurb = ({
           <Grid.Column
             computer={13}
             floated={imgFloated}
+            only='computer'
             verticalAlign='middle'>
             <Image
               size={imgSize || 'small'}
@@ -47,16 +53,31 @@ const CompanyBlurb = ({
               <img src={imagePath} />
             </Image>
           </Grid.Column>
-        </Grid>
+          <Grid.Column
+            only='mobile'
+            mobile={16}
+            verticalAlign='middle'>
+            <Image
+              size={imgSize || 'small'}
+              centered
+              verticalAlign='middle'>
+              <img src={imagePath} />
+            </Image>
+          </Grid.Column>
+        </NoPaddingGrid>
       </ColorColumn>
-      <ColorColumn width={8} background={text}>
-        <Grid
+      <ColorColumn
+        computer={8}
+        mobile={16}
+        background={text}>
+        <NoPaddingGrid
           columns={1}
           padded
           style={{ minHeight: '20em' }}
           floated={textFloated}>
           <Grid.Column
             computer={13}
+            mobile={16}
             verticalAlign='middle'
             floated={textFloated}>
             <Header as='h3' inverted>
@@ -72,7 +93,7 @@ const CompanyBlurb = ({
             </Header>
             {children}
           </Grid.Column>
-        </Grid>
+        </NoPaddingGrid>
       </ColorColumn>
     </Grid.Row>
   )
