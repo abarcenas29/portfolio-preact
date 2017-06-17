@@ -3,7 +3,6 @@ import { Grid } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { Helmet } from 'react-helmet'
 import _ from 'lodash'
-import css from 'styled-components'
 
 import SplashPage from './sections/SplashPage'
 import AboutBlurb from './sections/AboutBlurb'
