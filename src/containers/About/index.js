@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import css from 'styled-components'
-import { Grid, Header, Icon } from 'semantic-ui-react'
+import { Grid, Header } from 'semantic-ui-react'
 
 import HorizontalTimeline
   from 'components/HorizontalTimeline'
