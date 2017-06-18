@@ -1,5 +1,6 @@
 import React from 'react'
 import css from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Element } from 'react-scroll'
 import {
   Button,
@@ -41,6 +42,7 @@ const ContentBlurb = ({
   floated,
   icon,
   title,
+  to,
   children
 }) => {
   return (
@@ -55,9 +57,11 @@ const ContentBlurb = ({
           <br />
           <br />
           <p>{children}</p>
-          <Button inverted basic size='large'>
-            More
-          </Button>
+          <Link to={to}>
+            <Button inverted basic size='large'>
+              More
+            </Button>
+          </Link>
         </ParagraphContainer>
       </Grid.Column>
     </Grid>
@@ -87,6 +91,7 @@ export default () => {
           mobile={16}
           color='violet'>
           <ContentBlurb
+            to='/about'
             title='Who am I'
             icon='user outline'
             floated='right'>
@@ -97,6 +102,7 @@ export default () => {
         </ColorColumn>
         <ColorColumn computer={8} mobile={16} color='green'>
           <ContentBlurb
+            to='/'
             title='Skillset'
             icon='student'
             floated='left'>

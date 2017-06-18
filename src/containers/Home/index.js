@@ -12,6 +12,9 @@ import Contacts from './sections/Contacts'
 import Waypoint from 'react-waypoint'
 
 import { dimNavMenuAction } from 'containers/App/actions'
+import {
+  SwitchToLinkAction
+} from 'components/MainNav/actions'
 
 import { NoPaddingGrid } from 'components/CommonJS'
 
@@ -28,6 +31,10 @@ class Home extends Component {
 
     this.waypointOnEnter = this.waypointOnEnter.bind(this)
     this.waypointOnLeave = this.waypointOnLeave.bind(this)
+  }
+
+  componentWillMount () {
+    this.props.switchToLink(false)
   }
 
   computeHeight () {
@@ -112,6 +119,8 @@ const mapDispatchToProps = dispatch => {
   return {
     dimNavMenu: payload =>
       dispatch(dimNavMenuAction(payload)),
+    switchToLink: payload =>
+      dispatch(SwitchToLinkAction(payload)),
     dispatch
   }
 }

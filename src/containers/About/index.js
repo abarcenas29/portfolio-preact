@@ -13,6 +13,9 @@ import CompanyBlurb from './sections/CompanyBlurb'
 import Waypoint from 'react-waypoint'
 
 import { dimNavMenuAction } from 'containers/App/actions'
+import {
+  SwitchToLinkAction
+} from 'components/MainNav/actions'
 
 const HistoryContainer = css.div`
   height: 20em;
@@ -63,6 +66,10 @@ class Home extends Component {
         }
       ]
     }
+  }
+
+  componentWillMount () {
+    this.props.switchToLink(true)
   }
 
   waypointOnEnter () {
@@ -188,6 +195,8 @@ const mapDispatchToProps = dispatch => {
   return {
     dimNavMenu: payload =>
       dispatch(dimNavMenuAction(payload)),
+    switchToLink: payload =>
+      dispatch(SwitchToLinkAction(payload)),
     dispatch
   }
 }

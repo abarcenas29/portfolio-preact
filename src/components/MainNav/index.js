@@ -4,7 +4,9 @@
 *
 */
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link } from 'react-scroll'
+import { Link as Rlink } from 'react-router-dom'
 import css from 'styled-components'
 
 import {
@@ -15,6 +17,7 @@ import {
   Menu
 } from 'semantic-ui-react'
 
+import { SwitchToLinkAction } from './actions'
 import { NoPaddingGrid } from 'components/CommonJS'
 
 const Header = css.header`
@@ -133,6 +136,7 @@ class MainNav extends Component {
   }
 
   render () {
+    const { switchToLink } = this.props
     return (
       <NoPaddingGrid columns={1} centered>
         <Grid.Column
@@ -148,42 +152,85 @@ class MainNav extends Component {
               </Image>
             </BrandContainer>
             <MenuContainer>
-              <MenuParent className='nav-menu'>
-                <li className='desktop'>
-                  <ScrollLink to='splash-page'>
-                    Home
-                  </ScrollLink>
-                </li>
-                <li className='desktop'>
-                  <ScrollLink to='about-blurb' offset={-75}>
-                    About
-                  </ScrollLink>
-                </li>
-                <li className='desktop'>
-                  <ScrollLink to='main-portfolio'>
-                    Portfolio
-                  </ScrollLink>
-                </li>
-                <li className='desktop'>
-                  <ScrollLink to='contacts'>
-                    Contact
-                  </ScrollLink>
-                </li>
-                <li className='mobile'>
-                  <Button
-                    icon='content'
-                    basic
-                    inverted
-                    onClick={() =>
-                      this.handleNavModal(true)}
-                  />
-                  <ModalNavigation
-                    open={this.state.mobileNavigationState}
-                    onClose={() =>
-                      this.handleNavModal(false)}
-                  />
-                </li>
-              </MenuParent>
+              {switchToLink
+                ? <MenuParent className='nav-menu'>
+                  <li className='desktop'>
+                    <Rlink to='/'>
+                        Home
+                      </Rlink>
+                  </li>
+                  <li className='desktop'>
+                    <Rlink to='/about'>
+                        About
+                      </Rlink>
+                  </li>
+                  <li className='desktop'>
+                    <Rlink to='/'>
+                        Portfolio
+                      </Rlink>
+                  </li>
+                  <li className='desktop'>
+                    <Rlink to='/'>
+                        Contact
+                      </Rlink>
+                  </li>
+                  <li className='mobile'>
+                    <Button
+                      icon='content'
+                      basic
+                      inverted
+                      onClick={() =>
+                          this.handleNavModal(true)}
+                      />
+                    <ModalNavigation
+                      open={
+                          this.state.mobileNavigationState
+                        }
+                      onClose={() =>
+                          this.handleNavModal(false)}
+                      />
+                  </li>
+                </MenuParent>
+                : <MenuParent className='nav-menu'>
+                  <li className='desktop'>
+                    <ScrollLink to='splash-page'>
+                        Home
+                      </ScrollLink>
+                  </li>
+                  <li className='desktop'>
+                    <ScrollLink
+                      to='about-blurb'
+                      offset={-150}>
+                        About
+                      </ScrollLink>
+                  </li>
+                  <li className='desktop'>
+                    <ScrollLink to='main-portfolio'>
+                        Portfolio
+                      </ScrollLink>
+                  </li>
+                  <li className='desktop'>
+                    <ScrollLink to='contacts'>
+                        Contact
+                      </ScrollLink>
+                  </li>
+                  <li className='mobile'>
+                    <Button
+                      icon='content'
+                      basic
+                      inverted
+                      onClick={() =>
+                          this.handleNavModal(true)}
+                      />
+                    <ModalNavigation
+                      open={
+                          this.state.mobileNavigationState
+                        }
+                      onClose={() =>
+                          this.handleNavModal(false)}
+                      />
+                  </li>
+                </MenuParent>}
             </MenuContainer>
           </Header>
         </Grid.Column>
@@ -192,4 +239,20 @@ class MainNav extends Component {
   }
 }
 
-export default MainNav
+const mapStateToProps = store => {
+  const { MainNav } = store
+  return {
+    switchToLink: MainNav.get('switchToLink')
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    SwitchToLink: payload => dispatch(SwitchToLinkAction()),
+    dispatch
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  MainNav
+)
