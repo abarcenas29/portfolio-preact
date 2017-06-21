@@ -10,7 +10,7 @@ import { Grid, Header } from 'semantic-ui-react'
 
 const PageContainer = css(Grid)`
   height: 20em;
-  background-image: url('/assets/images/splash.cover.web.jpg')
+  background-image: url('${props => props.backgroundUrl}')
   position: relative;
   padding-top: 0 !important;
   margin: 0 !important;
@@ -25,10 +25,13 @@ const Filter = css.div`
   width: 100%;
 `
 
-const PageSplash = () => {
+const PageSplash = ({ title, backgroundUrl }) => {
   return (
     <div>
-      <PageContainer centered relaxed>
+      <PageContainer
+        centered
+        relaxed
+        backgroundUrl={backgroundUrl}>
         <Filter />
         <Grid.Column
           widescreen={10}
@@ -37,7 +40,7 @@ const PageSplash = () => {
           textAlign='center'
           verticalAlign='middle'>
           <div>
-            <Header inverted as='h1'>About</Header>
+            <Header inverted as='h1'>{title}</Header>
           </div>
         </Grid.Column>
       </PageContainer>

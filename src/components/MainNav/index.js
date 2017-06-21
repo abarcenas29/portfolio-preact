@@ -89,32 +89,55 @@ const ScrollLink = ({ to, children, ...props }) => {
   )
 }
 
-const ModalNavigation = ({ ...props }) => {
+const ModalNavigation = ({ switchToLink, ...props }) => {
   return (
     <Modal size='small' {...props} basic>
       <ModalContent>
-        <Menu vertical>
-          <Menu.Item>
-            <ScrollLink to='splash-page'>
-              Home
-            </ScrollLink>
-          </Menu.Item>
-          <Menu.Item>
-            <ScrollLink to='about-blurb' offset={-80}>
-              About
-            </ScrollLink>
-          </Menu.Item>
-          <Menu.Item>
-            <ScrollLink to='main-portfolio'>
-              Portfolio
-            </ScrollLink>
-          </Menu.Item>
-          <Menu.Item>
-            <ScrollLink to='contacts'>
-              Contacts
-            </ScrollLink>
-          </Menu.Item>
-        </Menu>
+        {switchToLink
+          ? <Menu vertical>
+            <Menu.Item>
+              <Rlink to='/'>
+                  Home
+                </Rlink>
+            </Menu.Item>
+            <Menu.Item>
+              <Rlink to='/about'>
+                  About
+                </Rlink>
+            </Menu.Item>
+            <Menu.Item>
+              <Rlink to='/portfolio'>
+                  Portfolio
+                </Rlink>
+            </Menu.Item>
+            <Menu.Item>
+              <Rlink to='/contacts'>
+                  Contacts
+                </Rlink>
+            </Menu.Item>
+          </Menu>
+          : <Menu vertical>
+            <Menu.Item>
+              <ScrollLink to='splash-page'>
+                  Home
+                </ScrollLink>
+            </Menu.Item>
+            <Menu.Item>
+              <ScrollLink to='about-blurb' offset={-80}>
+                  About
+                </ScrollLink>
+            </Menu.Item>
+            <Menu.Item>
+              <ScrollLink to='main-portfolio'>
+                  Portfolio
+                </ScrollLink>
+            </Menu.Item>
+            <Menu.Item>
+              <ScrollLink to='contacts'>
+                  Contacts
+                </ScrollLink>
+            </Menu.Item>
+          </Menu>}
       </ModalContent>
     </Modal>
   )
@@ -183,6 +206,7 @@ class MainNav extends Component {
                           this.handleNavModal(true)}
                       />
                     <ModalNavigation
+                      switchToLink={switchToLink}
                       open={
                           this.state.mobileNavigationState
                         }
@@ -223,6 +247,7 @@ class MainNav extends Component {
                           this.handleNavModal(true)}
                       />
                     <ModalNavigation
+                      switchToLink={switchToLink}
                       open={
                           this.state.mobileNavigationState
                         }

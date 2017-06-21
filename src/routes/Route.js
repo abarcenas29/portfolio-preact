@@ -11,6 +11,8 @@ import loadContacts
   from 'bundle-loader?lazy!./../containers/Contacts'
 import loadNotMatch
   from 'bundle-loader?lazy!./../containers/NotFound'
+import loadPortfolio
+  from 'bundle-loader?lazy!./../containers/Portfolio'
 /* eslint-enable */
 
 export const App = ({ children }) => (
@@ -44,5 +46,15 @@ export const NotFound = () => (
     {NotMatch => <NotMatch />}
   </Bundle>
 )
+
+export const Portfolio = () => {
+  return (
+    <Bundle load={loadPortfolio}>
+      {Portfolio => {
+        return <Portfolio />
+      }}
+    </Bundle>
+  )
+}
 
 /* BUNDLE GENERATOR */

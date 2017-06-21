@@ -35,7 +35,7 @@ const AboutPageContainer = css.div`
   width: 1005;
 `
 
-class Home extends Component {
+class About extends Component {
   constructor (props, context) {
     super(props, context)
 
@@ -87,7 +87,10 @@ class Home extends Component {
           onEnter={this.waypointOnEnter}
           onLeave={this.waypointOnLeave}>
           <div style={{ width: '100%' }}>
-            <PageSplash />
+            <PageSplash
+              title='About'
+              backgroundUrl='/assets/images/splash.cover.web.jpg'
+            />
           </div>
         </Waypoint>
         <NoPaddingGrid relaxed>
@@ -202,5 +205,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(
-  Home
+  About
 )

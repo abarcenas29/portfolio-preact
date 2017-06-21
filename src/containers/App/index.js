@@ -15,6 +15,7 @@ const Base = css.div`
   padding: 0;
   margin: 0;
   width: 100%;
+  height: inherit;
 `
 
 const FixedHeader = css.div`
