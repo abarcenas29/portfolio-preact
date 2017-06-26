@@ -1,6 +1,8 @@
 import React from 'react'
 import { Element } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import {
+  Button,
   Grid,
   Header,
   Card,
@@ -49,6 +51,13 @@ export default () => {
           title='Becashready'>
           A management tool that enables NGOs to swiftly generate an action plan in delivering the necesary aid to disaster struck areas.
         </CardPortfolio>
+      </Grid.Column>
+      <Grid.Column width={16} textAlign='center'>
+        <Link to='/portfolio'>
+          <Button size='large'>
+            More Projects
+          </Button>
+        </Link>
       </Grid.Column>
     </Grid>
   )

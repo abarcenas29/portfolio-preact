@@ -188,12 +188,12 @@ class MainNav extends Component {
                       </Rlink>
                   </li>
                   <li className='desktop'>
-                    <Rlink to='/'>
+                    <Rlink to='/portfolio'>
                         Portfolio
                       </Rlink>
                   </li>
                   <li className='desktop'>
-                    <Rlink to='/'>
+                    <Rlink to='/contact'>
                         Contact
                       </Rlink>
                   </li>

@@ -1,6 +1,7 @@
 import React from 'react'
 import css from 'styled-components'
 import { Element } from 'react-scroll'
+import { Link } from 'react-router-dom'
 import {
   Button,
   Grid,
@@ -71,9 +72,11 @@ export default ({ height }) => {
                   <Icon name='github' />
                   GitHub
                 </Button>
-                <Button inverted basic>
-                  Portfolio
-                </Button>
+                <Link to='/portfolio'>
+                  <Button inverted basic>
+                    Portfolio
+                  </Button>
+                </Link>
               </SubHeader>
             </HeaderTitle>
           </div>
