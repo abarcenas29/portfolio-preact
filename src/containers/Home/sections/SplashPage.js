@@ -30,6 +30,8 @@ const Filter = css.div`
   height: inherit;
   position: absolute;
   width: 100%;
+  top: 0;
+  left: 0;
 `
 
 const SubHeader = css(Header.Subheader)`
