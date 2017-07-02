@@ -280,6 +280,10 @@ class Skills extends Component {
                       size='small'
                     />
                   </UL>
+                  <Header as='h2'>
+                    3rd Party Services
+                  </Header>
+                  <Header as='h2'>Other Tools</Header>
                 </Grid.Column>
               </NoPaddingGrid>
             </Grid.Column>
