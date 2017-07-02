@@ -63,7 +63,7 @@ module.exports = {
       {
         type: 'modify',
         path: `${PROJECT_DIR}/src/routes/index.js`,
-        pattern: /{ *.* ROUTE GENERATOR .. }/g,
+        pattern: /{ *.* ROUTE GENERATOR ..}/g,
         templateFile: './route/route.js.hbs'
       }
     ]

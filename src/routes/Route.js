@@ -13,6 +13,8 @@ import loadNotMatch
   from 'bundle-loader?lazy!./../containers/NotFound'
 import loadPortfolio
   from 'bundle-loader?lazy!./../containers/Portfolio'
+import loadSkills
+  from 'bundle-loader?lazy!./../containers/Skills'
 /* eslint-enable */
 
 export const App = ({ children }) => (
@@ -52,6 +54,16 @@ export const Portfolio = () => {
     <Bundle load={loadPortfolio}>
       {Portfolio => {
         return <Portfolio />
+      }}
+    </Bundle>
+  )
+}
+
+export const Skills = () => {
+  return (
+    <Bundle load={loadSkills}>
+      {Skills => {
+        return <Skills />
       }}
     </Bundle>
   )

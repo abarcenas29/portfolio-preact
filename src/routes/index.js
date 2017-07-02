@@ -7,6 +7,7 @@ import {
   About,
   Contacts,
   Portfolio,
+  Skills,
   /* ROUTE HOOK */
   NotFound
 } from './Route'
@@ -19,6 +20,7 @@ const Routes = () => {
         <Route path='/about' component={About} />
         <Route path='/contact' component={Contacts} />
         <Route path='/portfolio' component={Portfolio} />
+        <Route path='/skills' component={Skills} />
         {/* ROUTE GENERATOR */}
         <Route component={NotFound} />
       </Switch>

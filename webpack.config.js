@@ -25,12 +25,6 @@ if (process.env.NODE_ENV === 'production') {
 
 var path = require('path')
 
-// entry
-webpack.entry = {
-  app: './src/main.js',
-  vendor: [ 'preact', 'semantic-ui-react', 'lodash' ]
-}
-
 webpack.output = {
   path: path.resolve(__dirname, 'build'),
   publicPath: '/',
