@@ -102,7 +102,7 @@ export default () => {
         </ColorColumn>
         <ColorColumn computer={8} mobile={16} color='green'>
           <ContentBlurb
-            to='/'
+            to='/skills'
             title='Skillset'
             icon='student'
             floated='left'>

@@ -106,6 +106,11 @@ const ModalNavigation = ({ switchToLink, ...props }) => {
                 </Rlink>
             </Menu.Item>
             <Menu.Item>
+              <Rlink to='/skills'>
+                  Skills
+                </Rlink>
+            </Menu.Item>
+            <Menu.Item>
               <Rlink to='/portfolio'>
                   Portfolio
                 </Rlink>
@@ -125,6 +130,11 @@ const ModalNavigation = ({ switchToLink, ...props }) => {
             <Menu.Item>
               <ScrollLink to='about-blurb' offset={-80}>
                   About
+                </ScrollLink>
+            </Menu.Item>
+            <Menu.Item>
+              <ScrollLink to='about-blurb' offset={-80}>
+                  Skills
                 </ScrollLink>
             </Menu.Item>
             <Menu.Item>
@@ -188,6 +198,11 @@ class MainNav extends Component {
                       </Rlink>
                   </li>
                   <li className='desktop'>
+                    <Rlink to='/skills'>
+                        Portfolio
+                      </Rlink>
+                  </li>
+                  <li className='desktop'>
                     <Rlink to='/portfolio'>
                         Portfolio
                       </Rlink>
@@ -226,6 +241,11 @@ class MainNav extends Component {
                       to='about-blurb'
                       offset={-150}>
                         About
+                      </ScrollLink>
+                  </li>
+                  <li className='desktop'>
+                    <ScrollLink to='about-blurb'>
+                        Skills
                       </ScrollLink>
                   </li>
                   <li className='desktop'>

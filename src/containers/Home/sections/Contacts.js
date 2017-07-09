@@ -40,7 +40,7 @@ export default () => {
       </Grid.Column>
       <Grid.Column textAlign='center'>
         <Link to='/contact'>
-          <Button>
+          <Button secondary>
             Contact
           </Button>
         </Link>

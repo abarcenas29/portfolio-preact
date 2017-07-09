@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import css from 'styled-components'
 import { Grid, Header } from 'semantic-ui-react'
 
@@ -103,7 +104,13 @@ class About extends Component {
               <br />
               <Header as='h2'>Background</Header>
               <p>
-                Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+                My passion for computer started when I first failed my computer subject when I was in 3rd grade. Failure isn't new to me. But what I do when it comes to failure is to make sure I understand why I failed and what I can do to fix it. This ended me developing a passion for computers, starting from playing games most of the time (ruining my eyes), to eventually having thinking on how these games are made. While passion for telling the computer what to do. I never see myself developing games. Rather, through the years, I am more interested in developing software that would aid to productivity problems.
+              </p>
+              <p>
+                My start in programing is what I could say humble. Starting from GWBASIC to Turbo Basic in elementary. Moving toward doing simple webpages using Microsoft FrontPage, then in college with c++, eventually landing on Visual Basic as my first preferred language.
+              </p>
+              <p>
+                However, when I joined an Anime website that is ran on Wordpress. I became interested again in learning web programming. My skillset from my high school years aren't exactly on par with the requirement on making a customized Wordpress theme, while I don't want a site that looks like any another site. This where I started learning and understanding the web. Thus, the rest is history.
               </p>
               <br />
             </Grid.Column>
@@ -130,21 +137,24 @@ class About extends Component {
           <CompanyBlurb
             imagePath='/assets/images/manulife-logo.png'
             company='Manulife Business Processing Services'
-            year='20xx - 20xx'
+            year='2009 - 2011'
             position='IT Specialist'
             backgroundColor={{
               image: '#2E7D32',
               text: '#43A047'
             }}>
             <p>
-              Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+              Responsible for the day to day managing operation of the IT infrastructure, including all the basic components of LAN such as network operating system, file servers and network communications equipment and computer systems.
+            </p>
+            <p>
+              I also created small tool set for my team to ease our operations. These includes a ticketing system that is runs on sharepoint. A simple inventory system that uses Visual Basic and access to store serial numbers of all our hardware.
             </p>
           </CompanyBlurb>
           <CompanyBlurb
             imagePath='/assets/images/prodigy-logo.png'
             imgSize='medium'
             company='Prodigy Group Philippines'
-            year='20xx - 20xx'
+            year='2011 - 2012'
             position='Business Consulting Manager'
             reversed='computer'
             backgroundColor={{
@@ -152,28 +162,46 @@ class About extends Component {
               text: '#9E9E9E'
             }}>
             <p>
-              Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+              The first startup company that I joined. I first started as one of their sales team, where I go around and talk to clients selling a Canadian Auditing software. These clients are mostly from big corporations and some are from government agencies. On top of my technical know-how. This also helped me boslter my skills on communicating with people.
+            </p>
+            <p>
+              After a few months, they promoted me as their technical where I support and teach people how to use their software. I also help in creating scripts that will automate their auditing process. Its something similar to COBOL in a way.
             </p>
           </CompanyBlurb>
           <CompanyBlurb
             imagePath='/assets/images/bn-logo.png'
             imgSize='large'
             company='Beenest Technology Solutions'
-            year='20xx - 20xx'
+            year='2012 - 2016'
             position='Application Developer'
             backgroundColor={{
               image: '#EF6C00',
               text: '#FB8C00'
             }}>
             <p>
-              Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+              My first job where programming is a fulltime job. I mostly work on PHP via FuelPHP. This is my first time being exposed on a development lifecycle. This startup is based on Japan. My boss is Japanese and our clients are Japanese. There's a unique perspective when you develop a system catered to them that breaks some traditions when it comes to design.
+            </p>
+            <p>
+              As for my work there, I've made numerous systems made, from a real state listings site. To the companies consultant-client matching platform. Please see my
+              {' '}
+              <Link
+                style={{
+                  color: '#FFF',
+                  fontWeight: 700,
+                  textDecoration: 'underline'
+                }}
+                to='/portfolio'>
+                portfolio
+              </Link>
+              {' '}
+              for more info.
             </p>
           </CompanyBlurb>
           <CompanyBlurb
             imagePath='/assets/images/so-logo.svg'
             imgSize='large'
             company='Social Offshore'
-            year='20xx - 20xx'
+            year='2016 - present'
             position='Senior Front-end Web Developer'
             reversed='computer'
             backgroundColor={{
@@ -181,7 +209,19 @@ class About extends Component {
               text: '#64B5F6'
             }}>
             <p>
-              Bacon ipsum dolor amet ham hock corned beef ribeye sausage andouille, meatloaf strip steak brisket jowl chuck tenderloin swine prosciutto ball tip. Shankle boudin porchetta beef hamburger. Spare ribs meatloaf chicken turkey, short ribs tongue andouille tri-tip burgdoggen turducken flank bacon. Hamburger pork chop pancetta tongue meatloaf short loin jerky. Ham hock corned beef ball tip, spare ribs drumstick alcatra cow shankle sirloin.
+              After staying for four years at Beenest and feeling that I've learned what I can there, I decided move to a UK company called Social Offshore and where I am currently employed. I also switched my skill set from PHP to full NodeJS. Since I've started recently, my first project is for a disaster assessment and disbursement system. Please see my
+              {' '}
+              <Link
+                style={{
+                  color: '#FFF',
+                  fontWeight: 700,
+                  textDecoration: 'underline'
+                }}
+                to='/portfolio'>
+                portfolio
+              </Link>
+              {' '}
+              for more info.
             </p>
           </CompanyBlurb>
         </NoPaddingGrid>

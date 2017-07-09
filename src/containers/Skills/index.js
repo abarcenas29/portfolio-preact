@@ -97,7 +97,10 @@ class Skills extends Component {
                   widescreen={16}
                   mobile={16}>
                   <p>
-                    Bacon ipsum dolor amet pig kevin short loin landjaeger tri-tip turkey. Tail brisket pork belly spare ribs. Venison brisket cupim pork chop. Ground round chuck shoulder swine. Turkey andouille pork, tri-tip capicola beef fatback short ribs ground round jowl pancetta jerky sirloin boudin beef ribs. Prosciutto boudin pork belly, picanha hamburger fatback beef ribs porchetta.
+                    There are the tools I've used in the past and present of my web dev career. I've put up a list here to show case what I find relevant and I can still use when needed.
+                  </p>
+                  <p>
+                    In any case, if its for PHP or Javascript I can read the manual and start using it. I didn't put most of them here, so don't hesitate to ask me.
                   </p>
                 </Grid.Column>
                 <Grid.Column
@@ -137,6 +140,10 @@ class Skills extends Component {
                     />
                     <Logos
                       src='/assets/images/semantic-ui.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/leaflet.logo.png'
                       size='small'
                     />
                   </UL>
@@ -283,7 +290,49 @@ class Skills extends Component {
                   <Header as='h2'>
                     3rd Party Services
                   </Header>
-                  <Header as='h2'>Other Tools</Header>
+                  <UL>
+                    <Logos
+                      src='/assets/images/twilo.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/facebook.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/twitter.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/google.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/aws.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/anlist.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/animenewsnetwork.logo.png'
+                      size='small'
+                    />
+                  </UL>
+                  <Header as='h2'>
+                    Other Tools/Services
+                  </Header>
+                  <UL>
+                    <Logos
+                      src='/assets/images/github.logo.png'
+                      size='small'
+                    />
+                    <Logos
+                      src='/assets/images/bitbucket.logo.png'
+                      size='small'
+                    />
+                  </UL>
                 </Grid.Column>
               </NoPaddingGrid>
             </Grid.Column>
