@@ -8,7 +8,7 @@
     "npm": "4.2.0"
   },
   "scripts": {
-    "build": "yarn run clean:build && cross-env NODE_ENV=production webpack --config webpack.config.js --progress --color --hide-modules",
+    "build": "yarn run clean:build && cross-env NODE_ENV=production parallel-webpack --config=webpack.config.js --no-stats",
     "clean:build": "cleandir build",
     "eject": "rimraf .git",
     "formatter": "prettier --print-width 60 --no-semi --single-quote --jsx-bracket-same-line  --write \"src/**/*.js\"",
@@ -102,6 +102,7 @@
     "lint-staged": "3.4.2",
     "module-alias": "2.0.0",
     "offline-plugin": "4.8.1",
+    "parallel-webpack": "2.0.0",
     "plop": "1.7.4",
     "postcss-loader": "2.0.5",
     "prettier": "1.3.1",
