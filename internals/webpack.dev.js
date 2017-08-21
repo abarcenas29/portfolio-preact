@@ -6,8 +6,12 @@ module.exports = {
     contentBase: './src',
     historyApiFallback: true,
     inline: true,
-    port: 3333,
+    host: '0.0.0.0',
+    port: 3100,
     publicPath: '/'
+  },
+  watchOptions: {
+    poll: true
   },
   plugins: [
     new HtmlWebpackPlugin({

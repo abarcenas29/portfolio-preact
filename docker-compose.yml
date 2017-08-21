@@ -1,0 +1,8 @@
+ web:
+  build: .
+  volumes:
+    - .:/app
+    - /app/node_modules
+  entrypoint: yarn start:dev
+  ports:
+    - 3100:3100
